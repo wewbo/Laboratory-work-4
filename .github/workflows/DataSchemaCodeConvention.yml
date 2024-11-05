@@ -18,4 +18,4 @@ jobs:
           # Встановлення sqlfluff, інструмент для перевірки якості SQL-коду
           pip install sqlfluff
           # Запуск sqlfluff для лінтингу файлу DataSchema.sql з використанням діалекту PostgreSQL
-          sqlfluff lint $GITHUB_WORKSPACE/DataSchema.sql --dialect postgres
+          sqlfluff lint $GITHUB_WORKSPACE/DataSchemaModified.sql --dialect postgres

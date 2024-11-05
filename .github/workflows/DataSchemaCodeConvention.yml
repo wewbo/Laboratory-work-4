@@ -1,0 +1,21 @@
+name: SQL Linter
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  SQLLinter:
+    runs-on: ubuntu-latest
+    steps:
+      # Клонування репозиторій з кодом
+      - name: Checkout Code in Repository
+        uses: actions/checkout@v3
+
+      # Запуск SQL лінтер для перевірки синтаксису SQL коду
+      - name: Start SQL Linter
+        run: |
+          # Встановлення sqlfluff, інструмент для перевірки якості SQL-коду
+          pip install sqlfluff
+          # Запуск sqlfluff для лінтингу файлу DataSchema.sql з використанням діалекту PostgreSQL
+          sqlfluff lint $GITHUB_WORKSPACE/DataSchema.sql --dialect postgres

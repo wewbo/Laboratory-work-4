@@ -1,12 +1,12 @@
 -- Видалення існуючих таблиць з каскадним видаленням обмежень
-DROP TABLE IF EXISTS noise_level CASCADE;
-DROP TABLE IF EXISTS current_data CASCADE;
-DROP TABLE IF EXISTS noise_environment CASCADE;
-DROP TABLE IF EXISTS recommendations CASCADE;
-DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE noise_level CASCADE CONSTRAINTS;
+DROP TABLE current_data CASCADE CONSTRAINTS;
+DROP TABLE noise_environment CASCADE CONSTRAINTS;
+DROP TABLE recommendations CASCADE CONSTRAINTS;
+DROP TABLE user CASCADE CONSTRAINTS;
 
 -- Створення таблиці noise_environment
-CREATE TABLE NoiseEnvironment (
+CREATE TABLE noise_environment (
     id SERIAL PRIMARY KEY, -- Первинний ключ
     description VARCHAR(255) NOT NULL -- Опис шумового середовища
 );
